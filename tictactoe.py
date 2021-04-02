@@ -24,67 +24,67 @@ def winlol():
     global count
     global win
     if b1.get() == "X" and b2.get() == "X" and b3.get() == "X":
-        answer = messagebox.showinfo("Glückwunsch!", "##############X hat gewonnen##############")
+        answer = messagebox.showinfo("Congrats!", "##############X won##############")
         win = True
         disable()
     elif b1.get() == "X" and b4.get() == "X" and b7.get() == "X":
-        amswer = messagebox.showinfo("Glückwunsch!", "##############X hat gewonnen##############")
+        amswer = messagebox.showinfo("Congrats!", "##############X won##############")
         win = True
         disable()
     elif b1.get() == "X" and b5.get() == "X" and b9.get() == "X":
-        amswer = messagebox.showinfo("Glückwunsch!", "##############X hat gewonnen##############")
+        amswer = messagebox.showinfo("Congrats!", "##############X won ##############")
         win = True
         disable()
     elif b9.get() == "X" and b6.get() == "X" and b3.get() == "X":
-        answer = messagebox.showinfo("Glückwunsch!", "##############X hat gewonnen##############")
+        answer = messagebox.showinfo("Congrats!", "##############X won ##############")
         win = True
         disable()
     elif b9.get() == "X" and b8.get() == "X" and b7.get() == "X":
-        answer = messagebox.showinfo("Glückwunsch!", "##############X hat gewonnen##############")
+        answer = messagebox.showinfo("Congrats!", "##############X won ##############")
         win = True
         disable()
     elif b5.get() == "X" and b4.get() == "X" and b6.get() == "X":
-        answer = messagebox.showinfo("Glückwunsch!", "##############X hat gewonnen##############")
+        answer = messagebox.showinfo("Congrats!", "##############X won ##############")
         win = True
     elif b5.get() == "X" and b2.get() == "X" and b8.get() == "X":
-        answer = messagebox.showinfo("Glückwunsch!", "##############X hat gewonnen##############")
+        answer = messagebox.showinfo("Congrats!", "##############X won ##############")
         win = True
         disable()
     elif b5.get() == "X" and b3.get() == "X" and b7.get() == "X":
-        answer = messagebox.showinfo("Glückwunsch!", "##############X hat gewonnen##############")
+        answer = messagebox.showinfo("Congrats!", "##############X won ##############")
         win = True
         disable()
 
     if b1.get() == "O" and b2.get() == "O" and b3.get() == "O":
-       answer =  messagebox.showinfo("Glückwunsch!", "##############O hat gewonnen##############")
+       answer =  messagebox.showinfo("Congrats!", "##############O won ##############")
        win = True
        disable()
     elif b1.get() == "O" and b4.get() == "O" and b7.get() == "O":
-        answer = messagebox.showinfo("Glückwunsch!", "##############O hat gewonnen##############")
+        answer = messagebox.showinfo("Congrats!", "##############O won ##############")
         win = True
         disable()
     elif b1.get() == "O" and b5.get() == "O" and b9.get() == "O":
-        answer = messagebox.showinfo("Glückwunsch!", "##############O hat gewonnen##############")
+        answer = messagebox.showinfo("Congrats!", "##############O won ##############")
         win = True
         disable()
     elif b9.get() == "O" and b6.get() == "O" and b3.get() == "O":
-        answer = messagebox.showinfo("Glückwunsch!", "##############O hat gewonnen##############")
+        answer = messagebox.showinfo("Congrats!", "##############O won ##############")
         win = True
         disable()
     elif b9.get() == "O" and b8.get() == "O" and b7.get() == "O":
-        answer = messagebox.showinfo("Glückwunsch!", "##############O hat gewonnen##############")
+        answer = messagebox.showinfo("Congrats!", "##############O won##############")
         win = True
         disable()
     elif b5.get() == "O" and b4.get() == "O" and b6.get() == "O":
-        answer = messagebox.showinfo("Glückwunsch!", "##############O hat gewonnen##############")
+        answer = messagebox.showinfo("Congrats!", "##############O won##############")
         win = True
         disable()
     elif b5.get() == "O" and b2.get() == "O" and b8.get() == "O":
-        answer = messagebox.showinfo("Glückwunsch!", "##############O hat gewonnen##############")
+        answer = messagebox.showinfo("Congrats!", "##############O won##############")
         win = True
         disable()
     elif b5.get() == "O" and b3.get() == "O" and b7.get() == "O":
-        answer = messagebox.showinfo("Glückwunsch!", "##############O hat gewonnen##############")
+        answer = messagebox.showinfo("Congrats!", "##############O won##############")
         win = True
         disable()
 
@@ -95,7 +95,7 @@ def draw():
 
 
     if count == 9 and win != True:
-        messagebox.showinfo("","##############Unentschieden##############")
+        messagebox.showinfo("","##############draw##############")
 
 
 # restart program
@@ -146,8 +146,8 @@ my_menu = Menu(window)
 window.config(menu = my_menu)
 
 options = Menu(my_menu, tearoff = False )
-my_menu.add_cascade(label = "Optionen", menu = options)
-options.add_command(label = "Neustart", command = reset)
+my_menu.add_cascade(label = "Options", menu = options)
+options.add_command(label = "Restart", command = reset)
 
 
 
@@ -173,7 +173,7 @@ def change(b):
         draw()
         change_play()
     else:
-        messagebox.showinfo("Stop!", "Feld bereits besetzt, wähle ein anderes")
+        messagebox.showinfo("Stop!", "Please pick another field.")
 
 
 # current player
@@ -194,7 +194,7 @@ def change_play():
 player = Label(bottom_frame)
 player.grid(row = 0)
 
-player.config(text= "Wer ist dran:")
+player.config(text= "Current Player:")
 
 xo = Label(bottom_frame)
 xo.config(textvariable = text, command = change_play())
